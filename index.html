@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/index.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__img-container">
+            <img src="img/logo.svg" alt="logo of company" class="header__logo">
+            <span class="header__decoration">v 2.01</span>
+        </div>
+        <nav class="header__nuv">
+            <ul class="header__list">
+                <li class="header__list-item">
+                    <a href="#">
+                        <img src="img/property-icon.svg" alt="" class="header__list-icon">
+                        <span>Имущество</span>
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <a href="#">
+                        <img src="img/inventory-icon.svg" alt="" class="header__list-icon">
+                        <span>Инвентаризация</span>
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <a href="#">
+                        <img src="img/worker-icon.svg" alt="" class="header__list-icon">
+                        <span>Сотрудники</span>
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <a href="#">
+                        <img src="img/allert-icon.svg" alt="" class="header__list-icon">
+                        <span>Уведомления</span>
+                    </a>
+                </li>
+                <li class="header__list-item selected">
+                    <a href="#">
+                        <img src="img/location-icon.svg" alt="" class="header__list-icon">
+                        <span>Локации</span>
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <a href="#">
+                        <img src="img/settings-icon.svg" alt="" class="header__list-image">
+                        <span>Настройки</span>
+                    </a>
+                </li>
+                <li class="header__list-item">
+                    <span>Скрыть меню</span>
+                </li>
+            </ul>
+        </nav>
+        <button type="button" class="header__exit"><svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.40267 12.3609C9.40267 12.5869 9.21524 12.7707 8.98477 12.7707H1.67159C1.44112 12.7707 1.25369 12.5869 1.25369 12.3609V1.63906C1.25369 1.41307 1.44112 1.22929 1.67159 1.22929H8.98477C9.21524 1.22929 9.40267 1.41307 9.40267 1.63906V4.80879H10.6564V1.63906C10.6564 0.735322 9.90644 0 8.98477 0H1.67159C0.749915 0 0 0.735322 0 1.63906V12.3609C0 13.2647 0.749915 14 1.67159 14H8.98477C9.90644 14 10.6564 13.2647 10.6564 12.3609V9.19121H9.40267V12.3609ZM12.5528 3.61986L11.6664 4.48897L13.6002 6.38535H4.45728V7.61465H13.6006L11.6664 9.51124L12.5528 10.3803L16 7.0002L12.5528 3.61986Z" fill="#FF6600"/>
+            </svg></button>
+    </header>
+    <form action="POST" class="create_location">
+        <h2 class="create_location-title">Создать локацию</h2>
+        <input type="text" name="name" placeholder="Название">
+        <input type="text" name="block" placeholder="Штрихкод">
+        <input type="text" name="RFID" placeholder="RFID">
+        <div class="selector">
+            <span>Вложенность</span>
+            <div class="select_list">
+                <label>
+                    <input type="radio" name="var" value="1">
+                    <span>Вариант 1</span>
+                </label>
+                <label>
+                    <input type="radio" name="var" value="2">
+                    <span>Вариант 2</span>
+                </label>
+                <label>
+                    <input type="radio" name="var" value="3">
+                    <span>Вариант 3</span>
+                </label>
+            </div>
+        </div>
+        <label class="switcher">
+            <span>Виртуальная локация</span>
+            <input type="checkbox" name="virtual location" class="hidden">
+            <div class="decor">
+                <div></div>
+            </div>
+        </label>
+        <label class="switcher">
+            <span>Локация для утерь</span>
+            <input type="checkbox" name="location for lose" class="hidden">
+            <div class="decor">
+                <div></div>
+            </div>
+        </label>
+        <div class="button_container">
+            <button class="create" type="submit"><span>Создать</span></button>
+            <button class="cancel" type="button">Отменить</button>
+        </div>
+    </form>
+    <form action="POST" class="create_location change">
+        <h2 class="create_location-title">Изменить локацию <span></span></h2>
+        <div class="input-container">
+            <span>Название</span>
+            <input type="text" name="name" placeholder="Название">
+        </div>
+        <div  class="input-container">
+            <span>Штрихкод</span>
+            <input type="text" name="block" placeholder="Штрихкод">
+        </div>
+        <div class="input-container">
+            <span>RFID</span>
+            <input type="text" name="RFID" placeholder="RFID">
+        </div>
+        <div class="selector">
+            <span>Вложенность</span>
+            <div class="select_list">
+                <label>
+                    <input type="radio" name="var" value="1">
+                    <span>Вариант 1</span>
+                </label>
+                <label>
+                    <input type="radio" name="var" value="2">
+                    <span>Вариант 2</span>
+                </label>
+                <label>
+                    <input type="radio" name="var" value="3">
+                    <span>Вариант 3</span>
+                </label>
+            </div>
+        </div>
+        <label class="switcher">
+            <span>Виртуальная локация</span>
+            <input type="checkbox" name="virtual location" class="hidden">
+            <div class="decor">
+                <div></div>
+            </div>
+        </label>
+        <label class="switcher">
+            <span>Локация для утерь</span>
+            <input type="checkbox" name="location for lose" class="hidden">
+            <div class="decor">
+                <div></div>
+            </div>
+        </label>
+        <div class="button_container">
+            <button class="delete" type="submit"><span>Удалить</span></button>
+            <button class="cancel" type="button">Отменить</button>
+            <button class="create" type="submit"><span>Создать</span></button>
+        </div>
+    </form>
+    <main class="main">
+        <section class="location">
+            <div class="subnav">
+                <h1 class="subnav__title">Локации <span class="subnav-title-path">/ Все локации</span></h1>
+            <div class="subnav__nav-container">
+                <nav class="subnav__nav">
+                    <ul class="subnav__list">
+                        <li class="subnav__list-item selected">Все локации</li>
+                        <li class="subnav__list-item">Импорт/Экспорт</li>
+                        <li class="subnav__list-item">Настройки</li>
+                    </ul>
+                </nav>
+                <button type="button">синхронизация <span>(17.05.2024 15:23:21)</span></button>
+            </div>
+            </div>
+            <section class="all-location">
+                <div class="all-location__search-container">
+                    <button type="button" class="black_button">Создать локацию</button>
+                    <label class="all-location__checkbox">
+                        <input type="checkbox" name="Search by exact occurrence" class="hidden">
+                        <span class="checkbox__icon"></span>
+                        <span>Поиск по точному вхождению</span>
+                    </label>
+                    <input type="search" name="search" placeholder="Поиск">
+                </div>
+                <ul class="all-location__list">
+                    <li class="all-location__list-item">
+                        <div class="all-location__item">
+                            <button type="button" class="open-button active"></button>
+                            <span class="all-location__item-icon"></span>
+                            <span class="all-location__item-name">Локация 1</span>
+                            <span class="all-location__item-number">512</span>
+                            <span class="all-location__item-change">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.61073 2.55667L9.44333 5.38994L2.8326 12H0V9.16673L6.61073 2.55601V2.55667ZM7.55493 1.61247L8.97123 0.195508C9.09645 0.0703245 9.26626 0 9.44333 0C9.62039 0 9.7902 0.0703245 9.91543 0.195508L11.8045 2.08457C11.9297 2.2098 12 2.37961 12 2.55667C12 2.73374 11.9297 2.90355 11.8045 3.02877L10.3875 4.44507L7.55493 1.61247Z" fill="#FF6600"/>
+                                </svg>
+                                Редактировать
+                            </span>
+                            <span class="all-location__item-delete">
+                                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.33333 5L8.33333 0L10 1.66667L5 6.66667L3.33333 5Z" fill="#FF5959"/>
+                                    <path d="M5 6.66667L0 1.66667L1.66667 1.98682e-07L6.66667 5L5 6.66667Z" fill="#FF5959"/>
+                                    <path d="M3.33333 5L8.33333 10L10 8.33333L5 3.33333L3.33333 5Z" fill="#FF5959"/>
+                                    <path d="M5 3.33333L0 8.33333L1.66667 10L6.66667 5L5 3.33333Z" fill="#FF5959"/>
+                                    </svg>
+                                    Удалить
+                            </span>
+                        </div>
+                        <ul class="all-location__list">
+                                <li class="all-location__list-item">
+                                    <div class="all-location__item">
+                                        <button type="button" class="open-button"></button>
+                                        <span class="all-location__item-icon"></span>
+                                        <span class="all-location__item-name">Подотдел 1</span>
+                                        <span class="all-location__item-number">10</span>
+                                        <span class="all-location__item-status">Для утерь</span>
+                                    </div>
+                                </li>
+                                <li class="all-location__list-item">
+                                    <div class="all-location__item">
+                                        <button type="button" class="open-button active"></button>
+                                        <span class="all-location__item-icon"></span>
+                                        <span class="all-location__item-name">Подотдел 2</span>
+                                        <span class="all-location__item-number">100</span>
+                                    </div>
+                                    <ul class="all-location__list">
+                                        <li class="all-location__list-item">
+                                            <div class="all-location__item">
+                                                <span class="all-location__item-icon"></span>
+                                                <span class="all-location__item-name">Подподотдел 1</span>
+                                                <span class="all-location__item-number">2</span>
+                                                <span class="all-location__item-status">Виртуальная</span>
+                                                <span class="all-location__item-barcode">Без штрихкода</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                        </ul>
+                    </li>
+                    <li class="all-location__list-item">
+                        <div class="all-location__item">
+                            <button type="button" class="open-button"></button>
+                            <span class="all-location__item-icon"></span>
+                            <span class="all-location__item-name">Локация 2</span>
+                            <span class="all-location__item-number">100</span>
+                        </div>
+                    </li>
+                    <li class="all-location__list-item">
+                        <div class="all-location__item">
+                            <button type="button" class="open-button"></button>
+                            <span class="all-location__item-icon"></span>
+                            <span class="all-location__item-name">Локация 3</span>
+                            <span class="all-location__item-number">100</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+           
+            
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <span>Последний приём 20.09.2021 18:36:21</span>
+            <span>Последняя передача 20.09.2021 18:38:21</span>
+        </div>
+        <a href="#" class="footer__link">
+            <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.0556 19H0.944444C0.693962 19 0.453739 18.8999 0.276621 18.7218C0.0995036 18.5436 0 18.302 0 18.05V0.95C0 0.698044 0.0995036 0.456408 0.276621 0.278249C0.453739 0.100089 0.693962 0 0.944444 0H16.0556C16.306 0 16.5463 0.100089 16.7234 0.278249C16.9005 0.456408 17 0.698044 17 0.95V18.05C17 18.302 16.9005 18.5436 16.7234 18.7218C16.5463 18.8999 16.306 19 16.0556 19ZM3.77778 3.8V7.6H7.55556V3.8H3.77778ZM3.77778 9.5V11.4H13.2222V9.5H3.77778ZM3.77778 13.3V15.2H13.2222V13.3H3.77778ZM9.44444 4.75V6.65H13.2222V4.75H9.44444Z" fill="#FF6600"/>
+            </svg>
+            <span> Документация</span>
+        </a>
+    </footer>
+</body>
+</html>

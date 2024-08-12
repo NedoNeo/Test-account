@@ -1,0 +1,36 @@
+.location {
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 32px;
+
+        color: #000000;
+    }
+
+    &__nav-container {
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 25px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 20px;
+
+        &-item {
+            
+                padding: 10px 31px;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 5px;
+
+                                
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 17.95px;
+                text-align: center;
+
+        }
+    }
+}

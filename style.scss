@@ -1,0 +1,385 @@
+
+
+@font-face {
+    font-family: 'Futura PT Book';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Book'), url('fonts/FuturaCyrillicBook.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Light'), url('fonts/FuturaCyrillicLight.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Medium'), url('fonts/FuturaCyrillicMedium.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Demi';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Demi'), url('fonts/FuturaCyrillicDemi.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Heavy'), url('fonts/FuturaCyrillicHeavy.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Bold'), url('fonts/FuturaCyrillicBold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Futura PT Extra Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Futura PT Extra Bold'), url('fonts/FuturaCyrillicExtraBold.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: "Monserat";
+        src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+        border: none;
+    }
+
+    *:hover {
+        cursor: url("img/cursor.png"), auto;
+    }
+
+    body {
+        font-family: 'Futura PT Book';
+        background-color: #F4F4F4;
+        color: #172139;
+        text-decoration: none;
+        --opacity: 0;
+        --display: none;
+
+        position: relative;
+
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        &::before {
+            content: "";
+            display: var(--display);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: var(--opacity);
+            background-color: #172139;
+            z-index: 20;
+            transition: opacity 1s linear;
+        }
+    }
+
+    .main {
+        padding-left: 320px;
+        padding-right: 30px;
+        margin-top: 30px;
+    }
+
+    .active {
+        --rotate: 0 !important;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .selected, .selected a { 
+            background-color: #172139 !important;
+            color: #FFFFFF !important;
+
+            &:hover {
+                color: #FFFFFF;
+            }
+    
+    }
+
+    .subnav {
+        
+        &__title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 32px;
+    
+            color: #000000;
+        }
+    
+        &__nav-container {
+            display: flex;
+            justify-content: space-between;
+    
+            margin-top: 25px;
+            align-items: center;
+        }
+    
+        &__list {
+            display: flex;
+            gap: 20px;
+    
+            &-item {
+                
+                    padding: 10px 31px;
+                    text-align: center;
+                    background-color: #fff;
+                    border-radius: 5px;
+    
+                                    
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 17.95px;
+                    text-align: center;
+    
+            }
+        }
+
+        button {
+            padding: 12px 19px;
+            border-radius: 5px;
+            background-color: #172139;
+            color: #FFFFFF;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+          
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17.95px;
+            letter-spacing: 0.1em;
+            text-align: center;
+
+            span {
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 12.82px;
+                letter-spacing: 0.1em;
+            }
+
+
+            &::before {
+                content: url("img/synchronize-icon.svg"); 
+            }
+        }
+    }
+
+    .selector {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        --new-rotate: 0deg;
+
+
+        &::after {
+            content: url("img/оранжевая-Галочка.svg");
+            transform: rotate(var(--new-rotate));
+            transition: transform 0.5s;
+        }
+        .select_list {
+            position: absolute;
+            display: none;
+            overflow: hidden;
+            transition: height 0.5s linear;
+            width: 100%;
+            height: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            top: 100%;
+            border-radius: 10px;
+            padding: 0;
+            box-shadow: 0px 10px 23px 0px #0000008f;
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    .switcher {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18px;
+            color: #172139;
+
+        }
+
+        .decor {
+            width: 52px;
+            height: 28px;
+            border-radius: 53px;
+            background-color: #EFEFEF;
+            display: flex;
+            align-items: center;
+
+            div {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background-color: white;
+                box-shadow: 0 0 4px black;
+
+                transition: margin-left 0.5s linear, background-color 0.5s ease;
+            }
+
+        }
+
+        input:checked ~ .decor div {
+            margin-left: calc(100% - 24px);
+            background-color: #FF6600;
+        }
+    }
+
+    .button_container {
+        display: flex;
+        justify-content: space-between ;
+        flex-wrap: wrap;
+        row-gap: 17px;
+    }
+
+        .create {
+            width: 193px;
+            height: 50px;
+            padding: 18px 49px;
+            border-radius: 5px;
+            background-color: #172139;
+            font-size: 14px;
+            line-height: 12.41px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: #FFFFFF;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            
+            text-transform: uppercase;
+
+            &::before {
+                content: url("img/Сохранить.svg");
+            }
+        }
+
+        .cancel {
+            width: 151px;
+            height: 50px;
+            padding: 18px 32px;
+            border-radius: 5px;
+            border: 1px solid #172139;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 14px;
+            line-height: 16.41px;
+            letter-spacing: 0.1em;
+            color: #172139;
+            text-transform: uppercase;
+
+        }
+
+        .delete {
+            width: 195px;
+            height: 50px;
+            padding: 18px 32px;
+            border-radius: 5px;
+            border: 1px solid #172139;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 14px;
+            line-height: 12.41px;
+            letter-spacing: 0.1em;
+            text-align: center;
+            color: #172139;
+            text-transform: uppercase;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+
+            &::before {
+                content: url("img/Удалить.svg");
+            }
+        }
+    
+
+    .change {
+        .button_container .create {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .black_button {
+        padding: 15px 51px;
+        background-color: #172139;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 16.41px;
+        letter-spacing: 0.1em;
+        color: #fff;
+
+        border-radius: 5px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &::before {
+            content: url("img/Плюс.svg");
+            height: 13px;
+        }
+    }
+
+
+    @import "header";
+    @import "location";
+    @import "all-location";
+    @import "footer";
+    @import "create-pop";
+    @import "settings";

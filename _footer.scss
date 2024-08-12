@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    height: 80px;
+    padding: 30px;
+    font-family: "Monserat";
+
+    background-color: #FFFFFF;
+
+    &__container {
+        margin-left: auto;
+
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 14.63px;
+        color: #A5A5A5;
+
+        display: flex;
+        gap: 30px;
+
+    }
+
+    &__link {
+        margin-left: auto;
+        display: flex;
+        gap: 7px;
+
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.5px;
+        color: #FF6600;
+
+    }
+}

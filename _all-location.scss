@@ -1,0 +1,179 @@
+.all-location {
+    margin-top: 31px;
+
+    &__search-container {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+
+
+      
+
+        & > input {
+            width: 300px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #AEAEAE;
+
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17.95px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+
+            background-image: url("img/Лупа.svg");
+            background-size: 14px 14px;
+            background-position: top 19px left 20px;
+            background-repeat: no-repeat;
+
+            padding: 17px 39px;
+        }
+    }
+
+    &__checkbox {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        input:checked + .checkbox__icon {
+            border-color: #FF6600;
+            background-color: #FF6600;
+            background-image: url("img/checked.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .checkbox__icon {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            border: 1px solid #172139;
+        }
+
+        span:last-child {
+            font-family: "Monserat";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17.07px;
+            color: #000000;
+        }
+    }
+
+    & > &__list {
+        margin-top: 44px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+
+        &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+
+        & ul {
+            margin-left: 45px;
+        }
+
+        
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        button {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            --rotate: 90deg;
+
+            position: relative;
+
+            background-color: #FF6600;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 8px;
+                height: 2px;
+                background-color: #FFFFFF;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(var(--rotate));
+                transition: transform 500ms linear;
+                width: 8px;
+                height: 2px;
+                transform-origin: center;
+                background-color: #FFFFFF;
+            }
+        }
+
+        &-icon {
+            display: block;
+            width: 4px;
+            height: 16px;
+            background-image: url("img/dots.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        &-name {
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 18px;
+            color: #172139;
+
+        }
+
+        &-number {
+            font-family: "Monserat";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17.07px;
+            color: #FF6600;
+        }
+
+        &-change {
+            color: #FF6600;
+        }
+
+        &-delete {
+            font-family: "Monserat";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 17.07px;
+
+            &:hover {
+                color: #FF5959;
+            }
+        }
+
+        &-barcode {
+            font-family: "Monserat";
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 17.07px;
+            color: #000000;
+
+        }
+
+
+    }
+}

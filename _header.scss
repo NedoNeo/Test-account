@@ -1,0 +1,113 @@
+.header {
+    padding: 25px 30px 20px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+
+    &__img-container {
+        position: relative;
+    }
+
+    &__logo {
+        width: 18.97px;
+        height: 32.61px;
+    }
+
+    &__decoration {
+        position: absolute;
+        left: 110%;
+        top: -10px;
+
+        background-color: #FF6600;
+        font-size: 12.08px;
+        font-weight: 450;
+        line-height: 15.48px;
+        text-align: center;
+        color: #FFFFFF;
+
+        width: 37.44px;
+        height: 16.91px;
+
+        border-radius: 3.62px;
+    }
+
+    &__nuv {
+        position: absolute;
+        top: calc(100% + 30px);
+        left: 0;
+
+        background-color: #FFFFFF;
+        width: 290px;
+    }
+
+    &__list { 
+        &-item {
+            a {
+                position: relative;
+                padding: 20px 15px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                color: inherit;
+                text-decoration: none;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    background-color: #F4F4F4;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+
+                    &:hover {
+                        cursor: url("img/cursor.png"), auto;
+                    }
+                }
+
+
+                &:hover {
+                    color: #FF6600;
+                }
+    
+            }
+
+
+            &:last-child {
+                
+                    display: flex;
+                    justify-content: center;
+                    padding: 24px;
+    
+                    span {
+                        position: relative;
+                        color: #FF6600;
+                        
+                        &::after {
+                            content: url("img/Галочка.svg");
+                            position: absolute;
+                            left: -15px;
+                            bottom: 0;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: url("img/cursor.png"), auto;
+                    }
+        
+            }
+            
+        }
+    }
+
+    
+
+    &__exit {
+        border: none;
+        background-color: transparent;
+    }
+
+
+}
